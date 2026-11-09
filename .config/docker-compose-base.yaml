@@ -1,7 +1,7 @@
 services:
   grafana:
     user: root
-    container_name: 'nivgreen-maplibre-panel'
+    container_name: 'mapcolonies-maplibre-panel'
 
     build:
       context: .
@@ -13,13 +13,13 @@ services:
     ports:
       - 3000:3000/tcp
     volumes:
-      - ../dist:/var/lib/grafana/plugins/nivgreen-maplibre-panel
+      - ../dist:/var/lib/grafana/plugins/mapcolonies-maplibre-panel
       - ../provisioning:/etc/grafana/provisioning
-      - ..:/root/nivgreen-maplibre-panel
+      - ..:/root/mapcolonies-maplibre-panel
 
     environment:
       NODE_ENV: development
-      GF_LOG_FILTERS: plugin.nivgreen-maplibre-panel:debug
+      GF_LOG_FILTERS: plugin.mapcolonies-maplibre-panel:debug
       GF_LOG_LEVEL: debug
       GF_DATAPROXY_LOGGING: 1
-      GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS: nivgreen-maplibre-panel
+      GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS: mapcolonies-maplibre-panel

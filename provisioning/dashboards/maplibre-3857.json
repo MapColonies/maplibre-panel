@@ -21,7 +21,7 @@
       },
       "id": 1,
       "title": "OSM + GIBS 4326 reprojected + markers",
-      "type": "nivgreen-maplibre-panel",
+      "type": "mapcolonies-maplibre-panel",
       "options": {
         "projection": "WebMercatorQuad",
         "view": {
@@ -115,7 +115,7 @@
       },
       "id": 2,
       "title": "Mixed: wants 4326 (shows shared-CRS warning)",
-      "type": "nivgreen-maplibre-panel",
+      "type": "mapcolonies-maplibre-panel",
       "options": {
         "projection": "WorldCRS84Quad",
         "view": {
@@ -199,7 +199,7 @@
       },
       "id": 3,
       "title": "Small mixed panel",
-      "type": "nivgreen-maplibre-panel",
+      "type": "mapcolonies-maplibre-panel",
       "options": {
         "projection": "WorldCRS84Quad",
         "view": {

@@ -21,7 +21,7 @@
       },
       "id": 1,
       "title": "GIBS WMTS (plate carr\u00e9e regrid) + markers",
-      "type": "nivgreen-maplibre-panel",
+      "type": "mapcolonies-maplibre-panel",
       "options": {
         "projection": "WorldCRS84Quad",
         "view": {
@@ -105,7 +105,7 @@
       },
       "id": 2,
       "title": "GIBS WMTS + heatmap, tile grid",
-      "type": "nivgreen-maplibre-panel",
+      "type": "mapcolonies-maplibre-panel",
       "options": {
         "projection": "WorldCRS84Quad",
         "view": {
