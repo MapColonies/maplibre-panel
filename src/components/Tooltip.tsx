@@ -17,7 +17,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     border: `1px solid ${theme.colors.border.weak}`,
     borderRadius: theme.shape.radius.default,
     boxShadow: theme.shadows.z3,
-    fontSize: theme.typography.bodySmall.fontSize,
+    fontSize: theme.typography.pxToRem(12),
     pointerEvents: 'none',
   }),
   row: css({ display: 'flex', gap: theme.spacing(2), justifyContent: 'space-between' }),

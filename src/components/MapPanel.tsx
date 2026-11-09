@@ -35,7 +35,7 @@ const getStyles = (theme: GrafanaTheme2) => ({
     borderRadius: theme.shape.radius.default,
     background: theme.colors.background.secondary,
     color: theme.colors.text.secondary,
-    fontSize: theme.typography.bodySmall.fontSize,
+    fontSize: theme.typography.pxToRem(12),
     pointerEvents: 'none',
   }),
   // Kept inside the panel so the close button stays reachable.
