@@ -1,5 +1,5 @@
 {
-  "name": "nivgreen-maplibre-panel",
+  "name": "mapcolonies-maplibre-panel",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack -c ./webpack.config.ts --env production",

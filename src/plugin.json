@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/grafana/grafana/main/docs/sources/developers/plugins/plugin.schema.json",
   "type": "panel",
   "name": "MapLibre CRS84",
-  "id": "nivgreen-maplibre-panel",
+  "id": "mapcolonies-maplibre-panel",
   "info": {
     "keywords": ["panel", "map", "maplibre", "wmts", "csw", "epsg:4326", "geo"],
     "description": "MapLibre map in EPSG:4326 (WorldCRS84Quad) or EPSG:3857, with WMTS, MapColonies CSW, OGC API Tiles, raster and MVT sources, and query-data layers.",

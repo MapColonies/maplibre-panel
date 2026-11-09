@@ -1,6 +1,6 @@
 # grafana-maplibre-plugin
 
-A Grafana panel plugin (`nivgreen-maplibre-panel`) that draws maps with
+A Grafana panel plugin (`mapcolonies-maplibre-panel`) that draws maps with
 [`@nivgreen/maplibre-gl-js-crs84`](https://github.com/nivGreenstein/maplibre-gl-js), a MapLibre GL JS fork for the OGC
 WorldCRS84Quad (EPSG:4326) tile matrix set. The panel draws:
 
@@ -17,8 +17,8 @@ The WMTS, CSW, OGC API, regrid and MVT handling is ported from
 
 ## Install on your Grafana
 
-Requirements: Grafana 13.2 or later. Each [GitHub release](https://github.com/NivGreenstein/grafana-maplibre-plugin/releases)
-has the packaged plugin attached as `nivgreen-maplibre-panel-<version>.zip`. You can also build the zip yourself with
+Requirements: Grafana 13.2 or later. Each [GitHub release](https://github.com/MapColonies/maplibre-panel/releases)
+has the packaged plugin attached as `mapcolonies-maplibre-panel-<version>.zip`. You can also build the zip yourself with
 `npm run package`, which writes it to `artifacts/`.
 
 Grafana refuses unsigned plugins by default. Until the plugin is signed (see [Signing](#signing)), allow this one plugin
@@ -27,10 +27,10 @@ by ID. Every method below needs that setting, followed by a Grafana restart.
 ```ini
 # grafana.ini
 [plugins]
-allow_loading_unsigned_plugins = nivgreen-maplibre-panel
+allow_loading_unsigned_plugins = mapcolonies-maplibre-panel
 ```
 
-or `GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=nivgreen-maplibre-panel` as an environment variable.
+or `GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=mapcolonies-maplibre-panel` as an environment variable.
 
 ### From the release URL
 
@@ -38,16 +38,16 @@ Grafana downloads and installs the zip when it starts:
 
 ```ini
 [plugins]
-preinstall_sync = nivgreen-maplibre-panel@1.0.0@https://github.com/NivGreenstein/grafana-maplibre-plugin/releases/download/v1.0.0/nivgreen-maplibre-panel-1.0.0.zip
-allow_loading_unsigned_plugins = nivgreen-maplibre-panel
+preinstall_sync = mapcolonies-maplibre-panel@1.0.0@https://github.com/MapColonies/maplibre-panel/releases/download/v1.0.0/mapcolonies-maplibre-panel-1.0.0.zip
+allow_loading_unsigned_plugins = mapcolonies-maplibre-panel
 ```
 
 With Docker, set the same values through environment variables:
 
 ```bash
 docker run -d -p 3000:3000 \
-  -e GF_PLUGINS_PREINSTALL_SYNC="nivgreen-maplibre-panel@1.0.0@https://github.com/NivGreenstein/grafana-maplibre-plugin/releases/download/v1.0.0/nivgreen-maplibre-panel-1.0.0.zip" \
-  -e GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=nivgreen-maplibre-panel \
+  -e GF_PLUGINS_PREINSTALL_SYNC="mapcolonies-maplibre-panel@1.0.0@https://github.com/MapColonies/maplibre-panel/releases/download/v1.0.0/mapcolonies-maplibre-panel-1.0.0.zip" \
+  -e GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS=mapcolonies-maplibre-panel \
   grafana/grafana:13.2.3
 ```
 
@@ -56,14 +56,14 @@ With the Grafana Helm chart, put both variables under `env:` in `values.yaml`.
 ### With grafana cli
 
 ```bash
-grafana cli --pluginUrl https://github.com/NivGreenstein/grafana-maplibre-plugin/releases/download/v1.0.0/nivgreen-maplibre-panel-1.0.0.zip \
-  plugins install nivgreen-maplibre-panel
+grafana cli --pluginUrl https://github.com/MapColonies/maplibre-panel/releases/download/v1.0.0/mapcolonies-maplibre-panel-1.0.0.zip \
+  plugins install mapcolonies-maplibre-panel
 ```
 
 ### By hand (air-gapped servers)
 
 Unzip the archive into Grafana's plugins directory (`/var/lib/grafana/plugins` by default). This gives you
-`/var/lib/grafana/plugins/nivgreen-maplibre-panel/plugin.json`.
+`/var/lib/grafana/plugins/mapcolonies-maplibre-panel/plugin.json`.
 
 After restarting, check **Administration > Plugins and data > Plugins** for **MapLibre CRS84**, then add it to a
 dashboard as a visualization.
@@ -142,7 +142,7 @@ Releases are cut by [release-please](https://github.com/googleapis/release-pleas
    `CHANGELOG.md`.
 2. Merging that PR tags `v<version>` and creates the GitHub release.
 3. The release workflow then runs the [build workflow](.github/workflows/build.yml) and attaches
-   `nivgreen-maplibre-panel-<version>.zip` to the release.
+   `mapcolonies-maplibre-panel-<version>.zip` to the release.
 
 `feat` commits bump the minor version, `fix` commits the patch, and `feat!` or a `BREAKING CHANGE` footer the major.
 
